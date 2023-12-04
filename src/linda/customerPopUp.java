@@ -104,7 +104,7 @@ public class customerPopUp extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+                //jghjghjg
                 //dispose();
                 new devPanel().setVisible(true);
                 
