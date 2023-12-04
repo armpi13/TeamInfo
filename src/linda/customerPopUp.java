@@ -33,6 +33,7 @@ public class customerPopUp extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(500, 200));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Welcome to Teams Info Project");
@@ -103,7 +104,8 @@ public class customerPopUp extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               dispose();
+                
+                //dispose();
                 new devPanel().setVisible(true);
                 
             }
