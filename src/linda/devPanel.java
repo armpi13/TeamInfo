@@ -119,8 +119,14 @@ public class devPanel extends javax.swing.JFrame {
        String  password = passwordfield.getText();
       
        if ("admin".equals(username) && "admin".equals(password)){
-            JOptionPane.showMessageDialog(null,"success");
             dispose();
+            java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+               dispose();
+                new regDev().setVisible(true);
+                
+            }
+        });        
           
        } else {
             JOptionPane.showMessageDialog(null,"Try again");
