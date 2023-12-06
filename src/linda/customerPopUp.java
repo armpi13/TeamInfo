@@ -94,8 +94,9 @@ public class customerPopUp extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
  java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               dispose();
-                new reg().setVisible(true);
+              dispose();
+               new LoginJ().setVisible(true);
+               //new reg().setVisible(true);
                 
             }
         });        
@@ -103,8 +104,7 @@ public class customerPopUp extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                //jghjghjg
+            public void run() {             
                 //dispose();
                 new devPanel().setVisible(true);
                 

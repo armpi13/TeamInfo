@@ -51,17 +51,18 @@ public class reg extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        howToButton = new javax.swing.JButton();
+        profilebtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 102));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setBackground(new java.awt.Color(255, 0, 153));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 48)); // NOI18N
         jLabel1.setText("Team Info App");
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registration", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -88,7 +89,7 @@ public class reg extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("(Only for delete option!) ");
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
@@ -217,15 +218,25 @@ public class reg extends javax.swing.JFrame {
             }
         });
 
+        howToButton.setText("How to..");
+        howToButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                howToButtonActionPerformed(evt);
+            }
+        });
+
+        profilebtn.setText("Profile");
+        profilebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profilebtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(404, 404, 404)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -242,17 +253,27 @@ public class reg extends javax.swing.JFrame {
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(121, 121, 121))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(howToButton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(233, 233, 233))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(204, 204, 204))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(profilebtn)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addContainerGap()
+                .addComponent(profilebtn)
+                .addGap(1, 1, 1)
                 .addComponent(jLabel1)
-                .addGap(75, 75, 75)
+                .addGap(84, 84, 84)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -261,7 +282,9 @@ public class reg extends javax.swing.JFrame {
                     .addComponent(jButton4)
                     .addComponent(jButton5)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
+                .addComponent(howToButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -310,7 +333,7 @@ public class reg extends javax.swing.JFrame {
                                                                                             //TO ENTER
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jTable1.setVisible(false);
+        //jTable1.setVisible(false);
         String teamName = txtname.getText();
         teamName=nameCheck(teamName);
         String Year = txtyear.getText();
@@ -354,19 +377,7 @@ public class reg extends javax.swing.JFrame {
             try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
                 int idToDelete = test;
                 preparedStatement.setInt(1, idToDelete);
-                int rowsAffected = preparedStatement.executeUpdate();
-                if (rowsAffected > 0) {                  
-                    //JOptionPane.showMessageDialog(this,"Η εγγραφή διαφράφηκε επιτυχώς!");
-                    //txtid.setText("");
-                    //txtname.setText("");
-                   // txtyear.setText("");
-                    //table_update();
-                } else {
-                   // JOptionPane.showMessageDialog(this,"Δεν βρέθηκε εγγραφή με αυτό το ID.");
-                   // txtid.setText("");
-                    //txtname.setText("");
-                   // txtyear.setText("");
-                }
+                int rowsAffected = preparedStatement.executeUpdate();               
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -408,13 +419,13 @@ public class reg extends javax.swing.JFrame {
                 preparedStatement.setInt(1, idToDelete);
                 int rowsAffected = preparedStatement.executeUpdate();
                 if (rowsAffected > 0) {                  
-                    JOptionPane.showMessageDialog(this,"Η εγγραφή διαφράφηκε επιτυχώς!");
+                    JOptionPane.showMessageDialog(this,"You delete a register succesfully!");
                     txtid.setText("");
                     txtname.setText("");
                     txtyear.setText("");
                     table_update();
                 } else {
-                    JOptionPane.showMessageDialog(this,"Δεν βρέθηκε εγγραφή με αυτό το ID.");
+                    JOptionPane.showMessageDialog(this,"We didnt find a register with that ID");
                     txtid.setText("");
                     txtname.setText("");
                     txtyear.setText("");
@@ -441,6 +452,16 @@ public class reg extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton7ActionPerformed
+                                                                                            // HOW TO 
+    private void howToButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_howToButtonActionPerformed
+
+        JOptionPane.showMessageDialog(this, "<html><b>If you want to edit a register you have to click it once and then update the info on register panel and after that click update!</b></html>");
+           JOptionPane.showMessageDialog(this, "<html><b>If you want to delete a register you have to options,type a id on id field and click delete button or click it on table and click delete!</b></html>");
+    }//GEN-LAST:event_howToButtonActionPerformed
+
+    private void profilebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilebtnActionPerformed
+     
+    }//GEN-LAST:event_profilebtnActionPerformed
                                                                                            // TO READ BUTTON
       private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
@@ -524,6 +545,7 @@ public class reg extends javax.swing.JFrame {
     } 
     return wrongDate; } 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton howToButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -539,6 +561,7 @@ public class reg extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton profilebtn;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtyear;
