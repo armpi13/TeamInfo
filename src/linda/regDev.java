@@ -22,6 +22,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static jdk.nashorn.internal.objects.NativeRegExp.test;
+import static linda.reg.dateCheck;
+import static linda.reg.nameCheck;
 public class regDev extends javax.swing.JFrame {
     int temp1;                                                                              // GIA TO SHOWBUTTON
     public regDev() {
@@ -386,29 +388,37 @@ public class regDev extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
                                                                                             //EDIT BUTTON
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-             DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
-        int selectedIndex = jTable1.getSelectedRow();
-try {
-    
-    
-    int id = Integer.parseInt(Df.getValueAt(selectedIndex,0).toString());
-     String TeamName = txtname.getText();
-        String Year = txtyear.getText();
-      
-            Class.forName("com.mysql.jdbc.Driver");
+             try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/linda","root","")) {
+            String deleteQuery = "DELETE FROM record WHERE ID = ?";
+            int test = Integer.parseInt(txtid.getText());
             
+            try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+                int idToDelete = test;
+                preparedStatement.setInt(1, idToDelete);
+                int rowsAffected = preparedStatement.executeUpdate();               
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String teamName = txtname.getText();
+        teamName=nameCheck(teamName);
+        String Year = txtyear.getText();
+        Year=dateCheck(Year);
+        try {
+            Class.forName("com.mysql.jdbc.Driver");     
             con1 = DriverManager.getConnection("jdbc:mysql://localhost/linda","root","");
-            insert = con1.prepareStatement("update record set name = ?,Year=? where Id=?");
-           insert.setString(1,TeamName);
+            insert = con1.prepareStatement("insert into record(TeamName,Year)values(?,?)");
+            insert.setString(1,teamName);
             insert.setString(2, Year);
-         
-            insert.executeUpdate();
-            JOptionPane.showMessageDialog(this,"Record Added");
+            insert.executeUpdate();                     
+            table_update();
+            JOptionPane.showMessageDialog(this,"Succesfully changed");//Pop up Message 
             txtname.setText("");
             txtyear.setText("");
-           
+            txtid.setText("");
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(regDev.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(reg.class.getName()).log(Level.SEVERE, null, ex);    
+    
         }
         // TODO add your handling code here:
         // TODO add your handling code here:
@@ -420,7 +430,30 @@ try {
 */
                                                                                            //TO DELETE!
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+       try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/linda","root","")) {
+            String deleteQuery = "DELETE FROM record WHERE ID = ?";
+            int test = Integer.parseInt(txtid.getText());
+            
+            try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+                int idToDelete = test;
+                preparedStatement.setInt(1, idToDelete);
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected > 0) {                  
+                    JOptionPane.showMessageDialog(this,"You delete a register succesfully!");
+                    txtid.setText("");
+                    txtname.setText("");
+                    txtyear.setText("");
+                    table_update();
+                } else {
+                    JOptionPane.showMessageDialog(this,"We didnt find a register with that ID");
+                    txtid.setText("");
+                    txtname.setText("");
+                    txtyear.setText("");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
                                                                                            //TO CLEAR
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
