@@ -9,6 +9,7 @@ import java.awt.Window;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,9 +44,14 @@ public class RegisterFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txtregisterpassword = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(500, 200));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -65,26 +71,60 @@ public class RegisterFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel4.setText("Only numbers [1-9]");
+
+        jLabel5.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel5.setText("4 digits!");
+
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setBackground(new java.awt.Color(255, 0, 0));
+        jButton3.setText("Exit");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(261, 261, 261)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(261, 261, 261)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(136, 136, 136)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
-                            .addComponent(txtregisterusername)
-                            .addComponent(txtregisterpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))))
-                .addContainerGap(140, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtregisterusername, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                                    .addComponent(txtregisterpassword, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel4))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2)
+                            .addComponent(jLabel5))
+                        .addGap(17, 17, 17)))
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,10 +138,21 @@ public class RegisterFrame extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtregisterpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addComponent(jButton1)
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(txtregisterpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addGap(31, 31, 31)
+                        .addComponent(jButton1)
+                        .addContainerGap(30, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton3))
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,24 +174,60 @@ public class RegisterFrame extends javax.swing.JFrame {
     PreparedStatement insert;
         String registerUsername = txtregisterusername.getText();
      String registerPassword = txtregisterpassword.getText();
-      try {
-            Class.forName("com.mysql.jdbc.Driver");     
-            con1 = DriverManager.getConnection("jdbc:mysql://localhost/linda","root","");
-            insert = con1.prepareStatement("insert into logininfo(Username,Password)values(?,?)");
-            insert.setString(1,registerUsername);
-            insert.setString(2, registerPassword);
-            insert.executeUpdate(); 
-            
-            JOptionPane.showMessageDialog(this,"U just created a new account");//Pop up Message
-            new customerPopUp().setVisible(true);
-           
-            txtregisterusername.setText("");
-            txtregisterpassword.setText("");
-            dispose();
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(RegisterFrame.class.getName()).log(Level.SEVERE, null, ex);  
-    }//GEN-LAST:event_jButton1ActionPerformed
+     if (registerUsername.isEmpty() || registerPassword.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Both fields should be filled.");
+     txtregisterusername.setText("");
+        txtregisterpassword.setText("");
+    return; // Επιστροφή χωρίς να συνεχίσετε σε περίπτωση σφάλματος
+}
+     if (!registerPassword.matches("[0-9]+")) {
+    JOptionPane.showMessageDialog(this, "The password must have only numbers[1-9].");
+     txtregisterusername.setText("");
+        txtregisterpassword.setText("");
+    return; // Επιστροφή χωρίς να συνεχίσετε σε περίπτωση σφάλματος
+     }
+    if (!registerPassword.matches("\\d{4}")) {
+    JOptionPane.showMessageDialog(this, "Password must have only 4 digits.");
+    return; // Επιστροφή χωρίς να συνεχίσετε σε περίπτωση σφάλματος
+     }
+     try {
+    Class.forName("com.mysql.jdbc.Driver");     
+    con1 = DriverManager.getConnection("jdbc:mysql://localhost/linda","root","");
+
+    // Έλεγχος αν το όνομα χρήστη υπάρχει ήδη
+    PreparedStatement checkUser = con1.prepareStatement("SELECT * FROM pendingaccounts WHERE Username = ?");
+    checkUser.setString(1, registerUsername);
+    ResultSet resultSet = checkUser.executeQuery();
+    if (resultSet.next()) {
+        JOptionPane.showMessageDialog(this, "The username already exist,please retry!");
+        txtregisterusername.setText("");
+        txtregisterpassword.setText("");
+    } else {
+        insert = con1.prepareStatement("INSERT INTO pendingaccounts(Username, Password) VALUES (?, ?)");
+        insert.setString(1, registerUsername);
+        insert.setString(2, registerPassword);
+        insert.executeUpdate(); 
+        JOptionPane.showMessageDialog(this, "Your account pending for confirmation!");
+        new LoginJ().setVisible(true);
+        //new customerPopUp().setVisible(true);
+        txtregisterusername.setText("");
+        txtregisterpassword.setText("");
+        dispose();
     }
+} catch (ClassNotFoundException | SQLException ex) {
+    Logger.getLogger(RegisterFrame.class.getName()).log(Level.SEVERE, null, ex);  
+}
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+        new LoginJ().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+      System.exit(0);
+    }//GEN-LAST:event_jButton3ActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -176,11 +263,16 @@ public class RegisterFrame extends javax.swing.JFrame {
         });
     }
 
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtregisterpassword;
     private javax.swing.JTextField txtregisterusername;

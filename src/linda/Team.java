@@ -16,6 +16,8 @@ public class Team {
     public int teamYearCreation;
     
     public int countOfCups;
+    
+    public String owner;
    
         
     
