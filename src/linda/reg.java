@@ -572,7 +572,7 @@ public class reg extends javax.swing.JFrame {
         while (userNumber<1900 || userNumber>2023) {             
         if (wrongDate == null) {
             JOptionPane.showMessageDialog(null,"The user pressed cancel");
-            
+            //test
         } else {
             try {           
                 // Έλεγχος αν είναι τετραψήφιος και μεγαλύτερος του 1900.
