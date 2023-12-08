@@ -38,12 +38,9 @@ public class regDev extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         txtname = new javax.swing.JTextField();
         txtyear = new javax.swing.JTextField();
-        txtid = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         cupslabel = new javax.swing.JLabel();
         labelowner = new javax.swing.JLabel();
@@ -92,15 +89,6 @@ public class regDev extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Year Of Creation");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("ID");
-
-        txtid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtidActionPerformed(evt);
-            }
-        });
-
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Enter");
@@ -109,9 +97,6 @@ public class regDev extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel5.setText("(Only for delete option!) ");
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,23 +120,15 @@ public class regDev extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4)
                     .addComponent(cupslabel)
                     .addComponent(labelowner))
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtyear, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(txtname)
-                            .addComponent(txtcups)
-                            .addComponent(txtowner))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtyear, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(txtname)
+                    .addComponent(txtcups)
+                    .addComponent(txtowner))
+                .addContainerGap(167, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(116, 116, 116)
                 .addComponent(jButton1)
@@ -170,12 +147,7 @@ public class regDev extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtyear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
+                .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cupslabel)
                     .addComponent(txtcups, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -649,11 +621,7 @@ public class regDev extends javax.swing.JFrame {
             Logger.getLogger(regDev.class.getName()).log(Level.SEVERE, null, ex);    
     }//GEN-LAST:event_jButton1ActionPerformed
                                                              
-}
-    private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtidActionPerformed
-                                                                                         //OTAN PATAS TO MOUSE KAI KANEI FILL TA TEXTFIELDS
+}                                                                                         //OTAN PATAS TO MOUSE KAI KANEI FILL TA TEXTFIELDS
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
 DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
         int selectedIndex = jTable1.getSelectedRow();
@@ -670,8 +638,7 @@ DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         txtname.setText("");
-        txtyear.setText("");
-        txtid.setText("");
+        txtyear.setText("");       
         txtcups.setText("");
         txtowner.setText("");
         
@@ -691,7 +658,7 @@ DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
         int selectedIndex = jTable2.getSelectedRow();
         txtname.setText(Df.getValueAt(selectedIndex,0).toString());
         txtyear.setText(Df.getValueAt(selectedIndex,1).toString());
-        txtid.setText(Df.getValueAt(selectedIndex,2).toString());
+        //txtid.setText(Df.getValueAt(selectedIndex,2).toString());
         txtcups.setText(Df.getValueAt(selectedIndex,3).toString());
         txtowner.setText(Df.getValueAt(selectedIndex,4).toString());
     }//GEN-LAST:event_jTable2MouseClicked
@@ -897,8 +864,6 @@ DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -914,7 +879,6 @@ DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
     private javax.swing.JLabel labelowner;
     private javax.swing.JButton logoutbtn;
     private javax.swing.JTextField txtcups;
-    private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtowner;
     private javax.swing.JTextField txtpasswordcheck;
