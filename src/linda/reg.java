@@ -55,17 +55,19 @@ public class reg extends javax.swing.JFrame {
         profilebtn = new javax.swing.JButton();
         logoutbtn = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 102));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 0, 153));
         jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 48)); // NOI18N
         jLabel1.setText("Team Info App");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 35, 550, -1));
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registration", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -156,6 +158,8 @@ public class reg extends javax.swing.JFrame {
                 .addContainerGap(83, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 205, -1, -1));
+
         jTable1.setBackground(new java.awt.Color(0, 0, 0));
         jTable1.setForeground(new java.awt.Color(204, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -181,6 +185,8 @@ public class reg extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(566, 205, 395, 329));
+
         jButton4.setBackground(new java.awt.Color(251, 0, 0));
         jButton4.setText("Delete");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -188,6 +194,7 @@ public class reg extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 541, 98, -1));
 
         jButton5.setText("Read");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -195,6 +202,7 @@ public class reg extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(593, 541, 98, -1));
 
         jButton2.setText("Update");
         jButton2.setMaximumSize(new java.awt.Dimension(61, 25));
@@ -204,6 +212,7 @@ public class reg extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(709, 541, 98, -1));
 
         jButton6.setText("About");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -211,6 +220,7 @@ public class reg extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(971, 625, 98, 33));
 
         jButton7.setText("Close");
         jButton7.setMaximumSize(new java.awt.Dimension(65, 25));
@@ -220,6 +230,7 @@ public class reg extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 625, 79, 33));
 
         howToButton.setText("How to..");
         howToButton.addActionListener(new java.awt.event.ActionListener() {
@@ -227,6 +238,7 @@ public class reg extends javax.swing.JFrame {
                 howToButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(howToButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(688, 584, 161, -1));
 
         profilebtn.setText("Profile");
         profilebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -234,6 +246,7 @@ public class reg extends javax.swing.JFrame {
                 profilebtnActionPerformed(evt);
             }
         });
+        getContentPane().add(profilebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(892, 13, -1, -1));
 
         logoutbtn.setText("Logout");
         logoutbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -241,6 +254,7 @@ public class reg extends javax.swing.JFrame {
                 logoutbtnActionPerformed(evt);
             }
         });
+        getContentPane().add(logoutbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(968, 13, -1, -1));
 
         jButton8.setText("Back");
         jButton8.setMaximumSize(new java.awt.Dimension(65, 25));
@@ -250,79 +264,10 @@ public class reg extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(794, 625, 68, 33));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(96, 96, 96)))
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(profilebtn)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(90, 90, 90)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(logoutbtn)
-                        .addGap(42, 42, 42))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(howToButton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(232, 232, 232))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(profilebtn)
-                            .addComponent(logoutbtn))))
-                .addGap(84, 84, 84)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(howToButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/istockphoto-874402896-2048x2048.jpg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 670));
 
         pack();
         setLocationRelativeTo(null);
@@ -607,6 +552,7 @@ public class reg extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
