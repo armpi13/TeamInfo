@@ -1,2 +1,2 @@
 # ProjectSxolhs
-Project TeamsInfo opoy tha xrisimopoieitai gia tournoua podosfairwn opoy tha katagrafontai oi omades
+Project TeamsInfo εφαρμογή που θα χρησιμοποιείται για την καταγραφή ομάδων που θα συμμετέχουν σε τουρνουά ποδοσφαίρου.
