@@ -105,7 +105,7 @@ CREATE TABLE `pendingaccounts` (
 
 INSERT INTO `pendingaccounts` (`Username`, `Password`) VALUES
 ('effer', 2234);
-
+('effer', 2234);
 -- --------------------------------------------------------
 
 --
