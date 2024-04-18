@@ -1,2 +1,2 @@
 # ProjectSxolhs
-to project tis sxolh poy einai on the way
+Project TeamsInfo opoy tha xrisimopoieitai gia tournoua podosfairwn opoy tha katagrafontai oi omades
